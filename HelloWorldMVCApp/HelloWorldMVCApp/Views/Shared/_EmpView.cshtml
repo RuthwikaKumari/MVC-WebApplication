@@ -1,0 +1,24 @@
+﻿@model HelloWorldMVCApp.tbl_employee
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.ecode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.ename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.deptid)
+        </td>
+        <td>
+            @{
+                Html.RenderAction("GetBonus", new { id = Model.ecode });
+            }
+        </td>
+        <td>
+            @Html.Partial("_ActionView", Model)
+        </td>
+    </tr>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Select User name</h2>
+@using (Html.BeginForm("DisplayDetails", "Assignment2", FormMethod.Post))
+{
+    
+<select name="id">
+    @foreach(var item in Model)
+    {
+    <option value="@item">@item</option>
+    }
+</select>
+    <br/><br/>
+    <input type="submit" name="name" value="Submit" />
+}
+

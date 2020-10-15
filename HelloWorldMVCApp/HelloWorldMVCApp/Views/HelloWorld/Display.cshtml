@@ -1,0 +1,22 @@
+﻿@model HelloWorldMVCApp.tbl_employee
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+@{ 
+    var x = (int)ViewData["x"];
+    var y = (int)ViewData["y"];
+    var sum = x + y;
+
+    var a = ViewBag.a;
+    var b = ViewBag.b;
+    var result = a * b;
+}
+<p>X=@ViewData["x"].ToString()</p>
+<p>Y=@ViewData["y"].ToString()</p>
+<p>Sum: @sum</p>
+
+<p>Result: @result</p>

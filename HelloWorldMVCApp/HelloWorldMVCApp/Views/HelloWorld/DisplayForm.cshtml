@@ -1,0 +1,48 @@
+﻿@*@{ 
+        var cities = new SelectList((List<string>) ViewData["cities"]);
+}*@
+
+@using (Html.BeginForm("HelloWorld","DisplayForm",FormMethod.Get))
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>@Html.Label("Ecode")</th>
+            @*<td><input type="text" id="ecode" name="ecode"/></td>*@
+            <td>@Html.TextBox("ecode")</td>
+        </tr>
+        <tr>
+            <th>@Html.Label("Ename")</th>
+            <td>@Html.TextBox("ename")</td>
+        </tr>
+        <tr>
+            <th>@Html.Label("Salary")</th>
+            <td>@Html.TextBox("salary")</td>
+        </tr>
+        <tr>
+            <th>@Html.Label("DeptID")</th>
+            <td>@Html.TextBox("deptID")</td>
+        </tr>
+        <tr>
+            <th>@Html.Label("Gender")</th>
+            <td>
+                @Html.RadioButton("gender", "M") Male
+                @Html.RadioButton("gender", "F") Female
+            </td>
+        </tr>
+        @*<tr>
+            <th>@Html.Label("City")</th>
+            <td>
+                @Html.DropDownList("cities", cities)
+            </td>
+        </tr>*@
+        <tr>
+            <th>@Html.Label("Hobbies")</th>
+            <td>
+                @Html.CheckBox("hobbies", htmlAttributes: new { @value = "Dance" }) Dance
+                @Html.CheckBox("hobbies", htmlAttributes: new { @value = "Singing" }) Singing
+                @Html.CheckBox("hobbies", htmlAttributes: new { @value = "Painting" }) Painting
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit"/>
+}

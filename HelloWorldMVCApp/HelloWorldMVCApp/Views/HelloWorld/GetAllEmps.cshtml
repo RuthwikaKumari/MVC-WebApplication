@@ -1,0 +1,42 @@
+﻿@model IEnumerable<HelloWorldMVCApp.tbl_employee>
+
+@{
+    ViewBag.Title = "GetAllEmps";
+}
+
+<h2>GetAllEmps</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ecode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deptid)
+        </th>
+        <th>
+            <p>Bonus</p>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    Html.RenderPartial("_EmpView", item);
+}
+</table>
+
+@section s1
+{
+    <hr color="" />
+}
+@section s2
+{
+}
